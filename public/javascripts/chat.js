@@ -14,6 +14,27 @@ socket.on('updatechat', function (username, data) {
 	notify()
 });
 
+socket.on('updateusers', function (usernames) {
+  $('#chatters').html('&nbsp;');
+  usernames = keys(usernames).sort();
+  $.each(usernames, function(key, value) {
+  	$('#chatters').append(
+  	  '<div class="chatter">'+value+'</div>');
+	});
+});
+
+socket.on('updaterooms', function(rooms, current_room) {
+	$('#rooms').empty();
+	$.each(rooms, function(key, value) {
+		if(value == current_room){
+			$('#rooms').append('<div>' + value + '</div>');
+		}
+		else {
+			$('#rooms').append('<div><a href="#" onclick="switchRoom(\''+value+'\')">' + value + '</a></div>');
+		}
+	});
+});
+
 // on load of page
 $(function(){
 	// when the client clicks SEND
@@ -63,4 +84,17 @@ function notifyTitle() {
 
 function resetTitle() {
   $(document).attr('title', "Conquest Chat");
+}
+
+function switchRoom(room){
+	socket.emit('switchRoom', room);
+}
+
+
+function keys(obj){
+  var keys = [];
+  for(var key in obj) {
+    keys.push(key);
+  }
+  return keys;
 }
