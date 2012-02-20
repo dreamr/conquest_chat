@@ -4,7 +4,7 @@ body {
   margin: 0px;
   padding: 0px;
 }
-#chatters {
+#right-panel {
   background: #fffeee;
   float: left;
   position: relative;
@@ -17,12 +17,12 @@ body {
   height: 634px;
   overflow: auto;
 }
-#chat_window {
+#left-panel {
   float: left;
   width: 610px;
   height: 410px;
 }
-#chat_window #messages {
+#left-panel #messages {
   background: #fff;
   font: 14px "Arial", Helvetica, Arial, sans-serif;
   margin: 2px;
@@ -32,31 +32,31 @@ body {
   height: 600px;
   overflow: auto;
 }
-#chat_window #composer {
+#left-panel #composer {
   margin: 0px;
   padding: 0px;
   width: 600px;
   white-space: nowrap;
 }
-#chat_window #new_message {
+#left-panel #new_message {
   border: 1px solid #eee;
   margin: 0px 0px 0px 2px;
   padding: 0px;
   width: 631px;
   height: 30px;
 }
-#chat_window #send_message {
+#left-panel #send_message {
   display: none;
 }
-#chat_window .message {
+#left-panel .message {
   border-top: 1px solid #eee;
   margin: 4px 8px;
   padding: 8px;
   width: 580px;
 }
-#chat_window .message:nth-child(even) {
+#left-panel .message:nth-child(even) {
   background: #fff;
 }
-#chat_window .message:nth-child(odd) {
+#left-panel .message:nth-child(odd) {
   background: #fffeee;
 }
