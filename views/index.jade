@@ -1,22 +1,6 @@
-script(src="/socket.io/socket.io.js")
-script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js")
-script(src="/javascripts/chat.js")
+script(src="/javascripts/chat_opener.js")
 
-div(id="left-panel")
+div(id="chat-login")
+  input(id="user-name")
+  input(id="open-chat", type="button", value="open chat", data-href="/chat")
   
-  div(id="messages")
-  
-  div(id="composer")
-    input(id="new_message")
-    input(type="button",id="send_message",value="send")
-  
-div(id="right-panel")
-  div(id="rooms")
-    <h2>Rooms</h2>
-    div(id="room-list")
-  
-  div(id="chatters")
-    <h2>Chatters</h2>
-    div(id="chatter-list")
-
-div(id="ding")

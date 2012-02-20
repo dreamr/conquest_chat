@@ -1,8 +1,12 @@
 body
-  height: 100%
   background: #D9F3FF
   margin: 0px
   padding: 0px
+  
+  h2
+    font: 16px "Arial", Helvetica, Arial, sans-serif
+    margin: 0px
+    padding: 6px 16px 6px 0px;
   
 #right-panel
   background: #fffeee
@@ -10,49 +14,82 @@ body
   position: relative
   left: 24px
   font: 14px "Arial", Helvetica, Arial, sans-serif
-  margin: 2px
   padding: 16px
   border: 1px solid #eee
-  width: 300px
-  height: 634px
+  width: 180px
+  height: 632px
   overflow: auto
+    
+  #room-list
+    padding-left: 8px
+    margin-bottom: 16px
+    
+    .current
+      font-weight: bold
+    
+  #chatter-list
+    padding-left: 8px
+    margin-bottom: 16px
     
 #left-panel
   float: left
   width: 610px
   height: 410px
   
-  #messages
+  #message-panel
     background: #fff
     font: 14px "Arial", Helvetica, Arial, sans-serif
-    margin: 2px
     padding: 16px
     border: 1px solid #eee
     width: 600px
-    height: 600px
-    overflow: auto
-
+    height: 600px    
+    overflow-y: scroll;
+    
   #composer
     margin: 0px
     padding: 0px
     width: 600px
     white-space: nowrap
 
-  #new_message
+  #new-message
     border: 1px solid #eee
-    margin: 0px 0px 0px 2px
+    margin: 0px
     padding: 0px
-    width: 631px
+    width: 632px
     height: 30px
 
-  #send_message
+  #send-message
     display: none
     
   .message
     border-top: 1px solid #eee
     margin: 4px 8px
     padding: 8px
-    width: 580px
+    width: 550px
     
   .message:nth-child(even) {background: #ffffff}
   .message:nth-child(odd)  {background: #fffeee}
+  
+#chat-login
+  position: absolute
+  top: 20px
+  left: 200px
+  margin: 0px
+  padding: 0px
+  
+  #user-name
+    margin: 0px
+    padding: 0px
+    position: relative
+    top: 3px
+    height: 37px
+    font-size: 18px
+    
+  #open-chat
+    margin: 0px
+    padding: 0px
+    height: 40px
+    width: 80px
+    border: 1px solid #ddd
+    background: #ffeeee
+    font-size: 12px

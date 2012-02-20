@@ -5,15 +5,9 @@ var express   = require('express')
   , routes    = require('./routes')
   , app       = module.exports = express.createServer()
   , io        = require('socket.io').listen(app)
-  , stylus    = require('stylus')
-  , chat      = require('chat').socketCalls(io)
-
-
-// For compiling stylus
-function compileMethod(str) {
-  return stylus(str)
-    .set('compress', true);
-};
+  , stylus    = require('stylus');
+  
+require('chat').socketCalls(io);
   
 // Express Config
 app.configure(function(){
@@ -37,9 +31,16 @@ app.configure('production', function(){
 });
 
 // Routes
-app.get('/',          routes.index);
-app.get('/viewport',  routes.viewport);
+app.get('/',          routes.index    );
+app.get('/chat',      routes.chat     );
+app.get('/viewport',  routes.viewport );
 
 // Startup
 app.listen(80);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+
+// For compiling stylus
+function compileMethod(str) {
+  return stylus(str)
+    .set('compress', true);
+};

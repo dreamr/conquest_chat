@@ -1,0 +1,24 @@
+script(src="/socket.io/socket.io.js")
+script(src="/javascripts/chat.js")
+
+div(id="left-panel")  
+  div(id="message-panel")
+    h2
+      span(id="current-room")
+      
+    div(id="messages")
+  
+  div(id="composer")
+    input(id="new-message")
+    input(type="button",id="send-message",value="send")
+  
+div(id="right-panel")
+  div(id="rooms")
+    h2 Rooms
+    div(id="room-list")
+  
+  div(id="chatters")
+    h2 Chatters
+    div(id="chatter-list")
+
+div(id="ding")
