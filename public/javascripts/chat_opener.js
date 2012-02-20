@@ -3,7 +3,7 @@ $(function(){
   $("#open-chat").live( "click", function(){
     var url = $(this).data("href");
     var userName = $("#user-name").val();
-    console.log(userName)
+
     if(userName.length == 0) {
       return;
     }

@@ -4,7 +4,7 @@ var socket = io.connect('http://localhost:80');
 socket.on('connect', function(){
 	// call the server-side function 'addUser' and send one parameter (value of prompt)
 	socket.emit('addUser', params('userName'));
-	$('#new-message').focus()
+	$('#new-message').focus();
 });
 
 // listener, whenever the server emits 'updateChat', this updates the chat body
